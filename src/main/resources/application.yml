@@ -1,0 +1,14 @@
+# src/main/resources/application.yml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kando
+    username: kando
+    password: kando
+  jpa:
+    hibernate:
+      ddl-auto: validate   # Flyway is the source of truth
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
